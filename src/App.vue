@@ -17,8 +17,9 @@ import Greeting from './components/Greeting.vue';
       <Greeting msg="Welcome!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/day1">Day 1</RouterLink>
+        <RouterLink to="/">Day 1</RouterLink>
+        <RouterLink to="/day2">Day 2</RouterLink>
+        <RouterLink to="/day3">Day 3</RouterLink>
       </nav>
     </div>
   </header>

@@ -24,22 +24,24 @@ const futureAge = computed<number>(() => {
 
 <template>
   <div class="parent">
-    <h1 v-if="!editing">Hey' Wassup {{ user.name }}</h1>
-    <div v-else class="edit">
-      <input id="name" type="text" v-model="user.name" />
-      <button @click="submit">Submit</button>
-    </div>
     <div>
-      <h3>You got {{ user.age }} real quick ngl</h3>
-      <h3>Soon u'll be {{ futureAge }} and you wont realise it...</h3>
-    </div>
+      <h1 v-if="!editing">Hey' Wassup {{ user.name }}</h1>
+      <div v-else class="edit">
+        <input id="name" type="text" v-model="user.name" />
+        <button @click="submit">Submit</button>
+      </div>
+      <div>
+        <h3>You got {{ user.age }} real quick ngl</h3>
+        <h3>Soon u'll be {{ futureAge }} and you wont realise it...</h3>
+      </div>
 
-    <div class="actions">
-      <button @click="user.age++">Click me to increase your age hehe</button>
-      <button @click="editing = true">Click me to change name</button>
-    </div>
+      <div class="actions">
+        <button @click="user.age++">Click me to increase your age hehe</button>
+        <button @click="editing = true">Click me to change name</button>
+      </div>
 
-    <!-- <button @click="count++">Increment</button> -->
+      <!-- <button @click="count++">Increment</button> -->
+    </div>
   </div>
 </template>
 

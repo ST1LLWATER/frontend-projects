@@ -8,11 +8,12 @@ defineProps<{
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      Welcome to my journey of learning vue. This is my
+      <!-- Welcome to my journey of learning vue. This is my -->
+      Follow
       <a href="https://github.com/st1llwater" target="_blank" rel="noopener"
         >Github</a
       >
-      Follow if you want to :)
+      if you want to :)
     </h3>
   </div>
 </template>
