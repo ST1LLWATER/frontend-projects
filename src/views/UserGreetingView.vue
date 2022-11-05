@@ -46,6 +46,9 @@ const futureAge = computed<number>(() => {
 </template>
 
 <style scoped>
+.parent {
+  margin: 0 auto;
+}
 .parent > h3 {
   margin: 5px 0;
 }
