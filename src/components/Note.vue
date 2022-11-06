@@ -1,14 +1,33 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue';
+
 const props = defineProps<{
+  id: string;
   note: string;
   date: string;
 }>();
+
+// const emit = defineEmits<{
+//   handleEditNote: (id: string, payload: string) => void;
+// }>();
+
+const isEditing = ref<boolean>(false);
+
+watch(isEditing, (newData, oldData) => {
+  console.log(newData, oldData);
+});
 </script>
 
 <template>
-  <div class="parent">
-    <p class="note">{{ props.note }}</p>
-    <p class="date">{{ props.date }}</p>
+  <div @click="isEditing = true" class="parent">
+    <div v-if="isEditing === false">
+      <p class="note">{{ props.note }}</p>
+      <p class="date">{{ props.date }}</p>
+    </div>
+    <div v-if="isEditing">
+      <input @change="$emit('handleEditNote', $event)" type="text" />
+      <button @click="isEditing = false">Submit</button>
+    </div>
   </div>
 </template>
 

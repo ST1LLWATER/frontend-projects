@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import Note from '../components/Note.vue';
 
 interface Note {
+  id: string;
   note: string;
   date: string;
 }
@@ -14,11 +15,16 @@ const newNote = ref<string>('');
 function handleAddNote() {
   addNote.value = false;
   notes.value.push({
+    id: Date.now().toString(),
     note: newNote.value,
     date: new Date().toDateString(),
   });
 
   newNote.value = '';
+}
+
+function handleEditNote(e) {
+  console.log(e.target.value);
 }
 </script>
 
@@ -36,7 +42,13 @@ function handleAddNote() {
       <button @click="addNote = true">+</button>
     </main>
     <div class="notes">
-      <Note v-for="note in notes" :note="note.note" :date="note.date" />
+      <Note
+        v-for="note in notes"
+        @handle-edit-note="handleEditNote"
+        :id="note.id"
+        :note="note.note"
+        :date="note.date"
+      />
     </div>
   </div>
 </template>

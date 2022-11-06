@@ -30,6 +30,6 @@ a,
     display: grid;
     width: 100%;
     padding: 0 25px;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1.5fr 2fr;
   }
 }
