@@ -23,8 +23,9 @@ function handleAddNote() {
   newNote.value = '';
 }
 
-function handleEditNote(e) {
-  console.log(e.target.value);
+function handleEditNote(e: InputEvent) {
+  const el = e.target as HTMLInputElement;
+  console.log(el.value);
 }
 </script>
 
